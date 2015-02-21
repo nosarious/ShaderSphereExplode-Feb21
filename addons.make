@@ -1,0 +1,6 @@
+ofx3DModelLoader
+ofxGui
+ofxKinect
+ofxOpenCv
+ofxThreadedImageLoader
+ofxXmlSettings
