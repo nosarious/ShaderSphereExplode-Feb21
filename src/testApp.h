@@ -1,8 +1,8 @@
 #pragma once
 
 /*
-This example demonstrates using vertex shader for deforming 3D objects.
-It draws cloud of triangles and apply vertex shader to deform it.
+This example demonstrates using a geometry shader for deforming 3D objects.
+It draws a triangle mesh taken from a sphere and applies a vertex shader to deform it.
 The mouse position controls the following parameters:
 x - amount of deformation, y - speed of deformation pulsation. 
 
