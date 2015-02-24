@@ -15,6 +15,7 @@ I found their example to include too many unexplained things, such as the creati
 My example uses an ofIcoSphere primitive, and moves it with the same intention as the vertex deformation, with input from horizontal and vertical mouse coordinates. These changes become more pronounced when the window is smaller than the screen realestate, and the mouse can go beyond the edge of the drawing window.
 
 Some examples of images created are here (taken with Hipstamatic)
+
 http://gersart.tumblr.com/image/111643169139 - an image showing a normal sphere primitive deformed along the y axis over time.
 http://gersart.tumblr.com/image/111731653604 - an ofIcoSphere primitive prior to deformation.
 http://gersart.tumblr.com/image/111646247479 - larger number of sphere primitive deforming along x-y axis over time.
