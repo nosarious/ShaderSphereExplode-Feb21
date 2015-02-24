@@ -6,9 +6,11 @@ It draws cloud of triangles and apply vertex shader to deform it.
 The mouse position controls the following parameters:
 x - amount of deformation, y - speed of deformation pulsation. 
 
-It's the example 06-VertexDeformation from the book 
+This is based off of example 06-VertexDeformation from the book 
 "Mastering openFrameworks: Creative Coding Demystified",
 Chapter 8 - Using Shaders
+
+It has been modified to use a geometry shader instead of just vertex and fragment shader.
 */
 
 #include "ofMain.h"
