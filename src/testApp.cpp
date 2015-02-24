@@ -17,9 +17,13 @@ void testApp::setup() {
 		//shader.load( "shaderVert.c", "shaderFrag.c" );
 	shader.load( "shaderVert.c", "shaderFrag.c", "shaderGeom.c" );
 	
+	//this sets the radius of the sphere
 	sphere.setRadius(100.0);
+	// this sets resolution of 'sphere'. 
+	// if this were an ofIcoSphere then a number such as 2-4 is appropriate
 	sphere.setResolution(20);
 	
+	// this turns the sphere into a triangle mesh made up of the faces.
 	triangles = sphere.getMesh().getUniqueFaces();
 	testMesh.setFromTriangles(triangles);
 	
@@ -37,6 +41,8 @@ void testApp::update(){
   time0 = time;
 
   float speed = ofMap( mouseY, 0, ofGetHeight(), 0, 5 );
+  
+  // these values will be sent to the geometry shader to control deformation
   phase += speed * dt;
   distortAmount = ofMap( mouseX, 0, ofGetWidth(), 0, 0.5);
 }
@@ -49,34 +55,28 @@ void testApp::draw(){
 	//for adding an illusion of visual depth to the scene
 	ofBackgroundGradient( ofColor( 255 ), ofColor( 128 ) );
 
-		//sphere.draw();
-	
-	
 	ofPushMatrix();	//Store the coordinate system
 
-	
-	
 		//Move the coordinate center to screen's center
-	ofTranslate( ofGetWidth()/2, ofGetHeight()/2, 0 );
-	//Calculate the rotation angle
-	float time = ofGetElapsedTimef();	//Get time in seconds
-	float angle = time * 10;			//Compute angle. We rotate at speed 10 degrees per second
-	ofRotate( angle, 0, 1, 0 );			//Rotate the coordinate system along y-axe
+		ofTranslate( ofGetWidth()/2, ofGetHeight()/2, 0 );
+		//Calculate the rotation angle
+		float time = ofGetElapsedTimef();	//Get time in seconds
+		float angle = time * 10;			//Compute angle. We rotate at speed 10 degrees per second
+		ofRotate( angle, 0, 1, 0 );			//Rotate the coordinate system along y-axe
 
-	//Enable the shader
-	shader.begin();		
-	shader.setUniform1f( "phase", phase );
-	shader.setUniform1f( "distortAmount", distortAmount );
-	shader.setUniform1f( "amount", distortAmount );
+		//Enable the shader
+		shader.begin();		
+		shader.setUniform1f( "phase", phase );
+		shader.setUniform1f( "distortAmount", distortAmount );
+		shader.setUniform1f( "amount", distortAmount );
 	
+		shader.setGeometryOutputCount(1024);
 	
-	shader.setGeometryOutputCount(1024);
+			//testMesh.drawWireframe();
 	
-		//testMesh.drawWireframe();
+			testMesh.drawFaces();
 	
-	testMesh.drawFaces();
-	
-	shader.end();	//Disable the shader
+		shader.end();	//Disable the shader
 
 	ofPopMatrix();	//Restore the coordinate system
 	
