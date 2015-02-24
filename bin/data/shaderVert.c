@@ -3,15 +3,15 @@
 #extension GL_EXT_gpu_shader4 : enable
 
 
-uniform float phase = 0.0;			//Phase for "sin" function
-uniform float distortAmount = 0.25; //Amount of distortion
+uniform float phase = 0.0;		//Phase for "sin" function
+uniform float distortAmount = 0.25; 	//Amount of distortion
 
 void main() {
 	
 	//Get original position of the vertex
 	vec3 v = gl_Vertex.xyz;
 	
-	
+	//the original code for distort occured in the vertex shader
 	/*
 	//Compute value of distortion for current vertex
 	float distort = distortAmount * sin( phase + 0.015 * v.y );
@@ -20,7 +20,7 @@ void main() {
 	v.x /= 1.0 + distort;
 	v.y /= 1.0 + distort;
 	v.z /= 1.0 + distort;
-*/
+	*/
 	//Set output vertex position
 	vec4 posHomog = vec4( v, 1.0 );
 	gl_Position = gl_ModelViewProjectionMatrix * posHomog;
