@@ -31,8 +31,15 @@ public:
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
 	
+	//traditional sphere primitive which will look like strips
 	ofSpherePrimitive sphere;
+	
+	//sphere primitive made up of equal-sized triangles (like a 20+ sided dice)
+	//ofIcoSpherePrimitive sphere;
+	
+	//vector to hold all triangles
 	vector<ofMeshFace> triangles;
 	
+	//mesh to hold triangles for drawing as a single unit
 	ofMesh testMesh;
 };
