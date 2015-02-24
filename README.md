@@ -16,7 +16,7 @@ My example uses an ofIcoSphere primitive, and moves it with the same intention a
 
 Some examples of images created are here (taken with Hipstamatic)
 
-http://gersart.tumblr.com/image/111643169139 - an image showing a normal sphere primitive deformed along the y axis over time.
+img src(http://gersart.tumblr.com/image/111643169139) - an image showing a normal sphere primitive deformed along the y axis over time.
 http://gersart.tumblr.com/image/111731653604 - an ofIcoSphere primitive prior to deformation.
 http://gersart.tumblr.com/image/111646247479 - larger number of sphere primitive deforming along x-y axis over time.
 http://gersart.tumblr.com/image/111800647014 - an ofIcoSphere deforming along y-axis over time.
