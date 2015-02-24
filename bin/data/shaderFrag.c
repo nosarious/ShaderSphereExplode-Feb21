@@ -2,13 +2,14 @@
 #extension GL_ARB_texture_rectangle : enable
 #extension GL_EXT_gpu_shader4 : enable
 
+	//original code had all triangles with the same color
 /*
 void main(){
 	gl_FragColor = gl_Color;
 }
 */
-	//out vec4 outputColor;
-
+	//new code changes the color of each triangle being drawn 
+	//this is based off of the color cube example
 void main()
 {
 		// gl_FragCoord contains the window relative coordinate for the fragment.
