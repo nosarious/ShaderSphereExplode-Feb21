@@ -1,5 +1,16 @@
 #include "testApp.h"
+/*
+This example demonstrates using a geometry shader for deforming 3D objects.
+It draws a triangle mesh taken from a sphere and applies a vertex shader to deform it.
+The mouse position controls the following parameters:
+x - amount of deformation, y - speed of deformation pulsation. 
 
+This is based off of example 06-VertexDeformation from the book 
+"Mastering openFrameworks: Creative Coding Demystified",
+Chapter 8 - Using Shaders
+
+It has been modified to use a geometry shader instead of just vertex and fragment shader.
+*/
 vector<ofPoint> vertices;
 vector<ofColor> colors;
 int nTri;		//The number of triangles
